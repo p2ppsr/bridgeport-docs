@@ -78,6 +78,8 @@ An array of objects that define custom Express routes for the bridge, where each
 
 - **`function`**. The route handler function that will take `(req, res)` as parameters.
 
+Note that if you provide custom routes for `q`, `s`, `query` and/or `socket`, they will override the default routes for your bridge. This can be extremely useful when implementing an "opaque bridge", where not all of the data from the MongoDB database is intended to be publicly queryable (perhaps because the state transition logic is not public and the data in the transactions was encrypted).
+
 ### `requestTransforms`
 
 A transformer function applied to incoming query requests.

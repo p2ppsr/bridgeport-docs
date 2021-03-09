@@ -8,11 +8,11 @@ People create Bitcoin transactions to interact with your backend. You write code
 
 You can model any finite state machine in your database, since it's just mongoDB. You can interpret the Bitcoin transactions in any way. You can deal with encrypted data so that not everything is public. And because the order of transactions in Bitcoin is immutable, anyone who has a copy of your State Machine's state transition logic can spin up a copy, audit your records or deploy a completely synchronized mirror of your API, allowing it to achieve infinite scale.
 
-Your APIs are no longer identiied by the servers on which they are hosted, but instead by the State Machine ID associated with their state transition logic. Any server can easily replicate and host a copy of the API with a given State Machine ID, allowing automatic, protocol-level load balancing and distribution robustness against central points of failure.
+Your APIs are no longer identified by the servers on which they are hosted, but instead by the State Machine ID associated with their state transition logic. Any server can easily replicate and host a copy of the API with a given State Machine ID, allowing automatic, protocol-level load balancing and distribution robustness against central points of failure.
 
 ## Writing State Machines
 
-Bridgeport State Machines (sometimes referre to as "busses") transform Bitcoin transactions into MongoDB transactions that update your State Machine database. To get started, learn how to [write your first Bridgeport State Machine](STATE_MACHINES.md).
+Bridgeport State Machines (sometimes referred to as "busses") transform Bitcoin transactions into MongoDB transactions that update your State Machine database. To get started, learn how to [write your first Bridgeport State Machine](STATE_MACHINES.md).
 
 ## Writing Bridges
 

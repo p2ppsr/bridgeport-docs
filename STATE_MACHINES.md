@@ -127,7 +127,7 @@ Use this to create Mongodb documents in your state machine. Pass an object with 
 
 ### `state.read`
 
-Use this to read information from state. Pass an object with any o these parameters: `collection`, `aggregate`, `find`, `sort`, `limit`, `skip`, `project`.
+Use this to read information from state. Pass an object with any of these parameters: `collection`, `aggregate`, `find`, `sort`, `limit`, `skip`, `project`.
 
 This returns a Promise. Always `await` Promises, even if you don't care about the results.
 
@@ -147,7 +147,7 @@ This returns a Promise. Always `await` Promises, even if you don't care about th
 
 Use this to remove documents from your state machine. Pass an object with `collection` and `find`. All matching objects will be deleted.
 
-This return a Promise. Always `await` Promises, even if you don't care about the results.
+This returns a Promise. Always `await` Promises, even if you don't care about the results.
 
 ### `state.db` and `state.session`
 

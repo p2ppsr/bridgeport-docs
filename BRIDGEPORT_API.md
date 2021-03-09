@@ -24,9 +24,9 @@ Returns a list of State Machine IDs for the Bridges hosted by this Bridgeport no
 
 Renders the `readme` field for the Bridge with `<id>` as an HTML page
 
-### `/<id>/.....`
+### `/<id>/...`
 
-Your custom routes, as defined in the `routes` array, will be rendereed relative to this path. For example, a route with `path: "posts"` would render at `/<id>/posts`. Do not prefix your routes with `/`.
+Your custom routes, as defined in the `routes` array, will be rendered relative to this path. For example, a route with `path: "posts"` would render at `/<id>/posts`. Do not prefix your routes with `/`.
 
 ### `/<id>/query`
 
@@ -43,3 +43,7 @@ HTTP API endpoint for running queries on the Bridge with `<id>`
 ### `/<id>/s`
 
 SSE socket endpoint where you can receive events from the Bridge with `<id>`
+
+## Reference Client
+
+To see the `/q` and `/s` endpoints in action, check out the code for [`parapet-js`](https://github.com/p2ppsr/parapet).
