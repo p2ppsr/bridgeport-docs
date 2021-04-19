@@ -39,7 +39,7 @@ To help you understand how Bridgeport works, we have created a few example Bridg
 - [Convo User Profiles Protocol State Machine](https://github.com/p2ppsr/convo-cupp-bus)
 - [Convo User Profiles Protocol Bridge](https://github.com/p2ppsr/convo-cump-bridge)
 
-Finally, to see how Parapet is used to run queries against these Bitcoin-powered backends, refer to the [main Convo codebase](https://github.com/p2ppsr/convo) (which, by the way, is also a [Rubeus](https://rubeus.app) app).
+Finally, to see how Parapet is used to run queries against these Bitcoin-powered backends, refer to the [main Convo codebase](https://github.com/p2ppsr/convo) (which, by the way, is also a [Babbage](https://projectbabbage.com) app).
 
 ## Bridgeport API
 
