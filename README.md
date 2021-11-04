@@ -30,25 +30,25 @@ Your APIs are no longer identified by the servers on which they are hosted, but 
 
 ## 1. Set Up Repo and Billing
 
-You'll start by creating a GitHub repository for your new Bridge. You can fork the Starter Repo(TODO: link), then you'll want to install the [Bridgeport Deployment GitHub App](TODO: link) and head over to the Bridgeport Dashboard(TODO: link).
+You'll start by creating a GitHub repository for your new Bridge. You can fork the [Starter Repo](https://github.com/p2ppsr/hello-world-protocol), then you'll want to install the [Bridgeport Deployment GitHub App](https://github.com/apps/bridgeport-deployment/installations/new) and head over to the [Bridgeport Dashboard](https://bridgeport-dashboard.babbage.systems).
 
-To link your Bridge repo for auto-deployment, start by going to "New Bridge from GitHub" and paste in the link to your repo. **This will work even if your repo is private, as long as the Bridgeport Deployment app is installed.** No need for a public repo.
+To link your Bridge repo for auto-deployment, start by going to "Create Bridge" and paste in the link to your repo. **This will work even if your repo is private, as long as the Bridgeport Deployment app is installed.** No need for a public repo.
 
-Select "Generate New Bridge Private Key" and save the key to your computer, as it is important. Then, follow the instructions for updating `bridgeport.json` to authenticate ownership over the Bridge repo. Push the changes to your production branch (`master` by default), and click "Verify". 
+Select "Generate New Bridge Private Key" and save the key to your computer, as it is important. Then, follow the instructions for updating `bridgeport.json` to authenticate ownership over the Bridge repo. Push the changes to your master branch, and view your new deployment from the Deployments page. 
 
-Deposit some money into Bridgeport Dashboard to pay for the hosting of your bridges, then you will be ready to start working! Whenever you push to your configured production branch, your bridge will be updated live on Bridgeport.
+Deposit some money into Bridgeport Dashboard to pay for the hosting of your bridges, then you will be ready to start working! Whenever you push to your master branch, your bridge will be updated live on Bridgeport.
 
-## 2. Writing Bridge Transformers
+## 2. Documentation for `bridgeport.json`
+
+The `bridgeport.json` file in the root of your repository is where you specify information about your Bridge. You should [read the docs here](BRIDGEPORT_JSON_SPEC.md).
+
+## 3. Writing Bridge Transformers
 
 Bridgeport Bridge Transformers transform Bitcoin transactions into database operations. To get started, learn how to [write your first Bridge Transformer](TRANSFORMERS.md).
 
-## 3. Writing Bridge Readers
+## 4. Writing Bridge Readers
 
 Once you've written a Bridge Transformer for your use-case, it's time to make it useful with an API. Head over to the [Bridge Readers Tutorial](READERS.md) and create yourself a Bridge object!
-
-## Documentation for `bridgeport.json`
-
-The `bridgeport.json` file in the root of your repository is where you specify information about your Bridge. You can [read the docs here](BRIDGEPORT_JSON_SPEC.md).
 
 ## Using Bridgeport
 
@@ -62,6 +62,7 @@ To help you understand how Bridgeport works, we have created a few example bridg
 
 - **[Convo User Messages Protocol Bridge](https://github.com/p2ppsr/convo-cump-bridge)**: A bridge that tracks the private messages exchanged between users of the on-chain Convo Messenger app
 - **[Convo User Profiles Protocol Bridge](https://github.com/p2ppsr/convo-cump-bridge)**: A bridge that tracks the user profiles of users of the on-chain Convo Messenger app
+- **[Hello World Protocol Bridge](https://github.com/p2ppsr/hello-world-protocol)**: This is the simple example bridge you can fork to start your own
 
 Finally, to see how Parapet is used to run queries against these Bitcoin-powered backends, refer to the [main Convo codebase](https://github.com/p2ppsr/convo) (which, by the way, is also an app built with the [Babbage App Engine](https://projectbabbage.com)).
 
@@ -73,8 +74,10 @@ For interactions with the Bridgeport Node API itself, check the [documentation](
 
 ## Inspiration
 
-This system was inspired by and adapted from the old, apparently "left for dead" Planaria ideas of a pseudonymous online entity known to us *only* as _unwriter. Credit is given for publishing the proof of concept under the MIT license.
+This system was inspired by and adapted from the old, apparently "left for dead" Planaria ideas of a pseudonymous online entity known to us only as *_unwriter*. Credit is given for publishing the proof of concept under the MIT license.
+
+No fear of Big Blocks!
 
 ## Copyright
 
-The materials in this repository are copyright Peer-to-peer Privacy Systems Research, LLC. All rights reserved. Do not re-distribute!
+All materials in this repository are copyright © 2021 Peer-to-peer Privacy Systems Research, LLC. All rights reserved. Do not re-distribute!

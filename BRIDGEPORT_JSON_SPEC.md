@@ -34,6 +34,8 @@ This is an object containing configuration related to the Bridge Reader.
 
 The reader should create an HTTP server that handles requests to the database.
 
+You will receive `MONGODB_READ_CREDS` and `MONGODB_DATABASE` to perform read-only operations from your database, and serve data to requesters.
+
 When `reader.runtime` is `nodejs14`, the reader directory must contain `package.json` with a `main` field pointing to a JavaScript file that creates an HTTP server. See the example bridge repositories for more guidence.
 
 ## `reader.runtime`
@@ -48,9 +50,34 @@ Specify a path relative to the `bridgeport.json` file where the Bridge Reader is
 
 This is an object containing configuration related to the Bridge Transformer.
 
-How the transformer works is undefined black voodoo magic. TODO document.
+The transformer contains an `index.js` fils with `exports.transformer`, which is a serverless function.
+
+The function HTTP payload contains `action` and `payload`.
+
+You will receive `MONGODB_READWRITE_CREDS` and `MONGODB_DATABASE` to transform the Bitcoin transactions you receive into your database.
+
+When `action` is `process`, take `payload` and add it to your database.
+
+When `action` is `rollback`, take `payload` and remove it from your database.
 
 ## `transformer.directory`
 
 Specify a path relative to the `bridgeport.json` file where the Bridge Transformer is kept. You are not allowed to use a parent directory and it must be a directory within the same folder (or a subfolder). If not provided, the default is `./transformer`.
 
+## `transformer.runtime`
+
+This will be used to define the runtime environment of your backend, once multiple runtimes are supported. Currently, it must be `nodejs14`
+
+## `filter`
+
+The filter is how you will specify the kinds of Bitcoin transactions you are interested in.
+
+Note that you may rarely receive transactions that don't follow your filter, if they are accidentally submitted to a node by a user, so validate them in your transformer before processing.
+
+## `filter.startingBlockHeight`
+
+The block number when your protocol was created.
+
+## `filter.find`
+
+This is the Bitbus/Bitsocket "find" block.

@@ -28,11 +28,11 @@ For every bridge, all routes under `/<id>` are associated with and served by the
 
 Note that `<id>` is the Bridge ID corresponding to the Bridge being queried.
 
-The default Bridge Reader will expose the following routes. This can be customized on a bridge-by-bridge basis.
+The *default* Bridge Reader will expose the following routes. **However**, this can be customized on a bridge-by-bridge basis.
 
 ### `/<id>`
 
-By default, renders an HTML version of the file in `reader/README.md`.
+By default, renders an HTML version of the file in `reader/README.md`. This is the bridge "home page".
 
 ### `/<id>/q`
 
