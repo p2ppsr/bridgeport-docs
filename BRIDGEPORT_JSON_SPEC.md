@@ -1,6 +1,6 @@
 # `bridgeport.json`
 
-This document is about the `bridgeport.json` file that you must include in the root directory of your Bridge repository in order to declare your bridge and define its functionality. This is the "main coniguration file" for Bridgeport.
+This document is about the `bridgeport.json` file that you must include in the root directory of your Bridge repository in order to declare your bridge and define its functionality. This is the main configuration file for your Bridge.
 
 The fields in the JSON file have the following meanings:
 
@@ -18,7 +18,7 @@ In the future, it will be possible to sign the code that runs your Bridge with y
 
 ## `name`
 
-A human-readable name for the bridge. This should not exceed 50 characters and should relate to the purpose and content of the Bridge. It will be shown on the homepage of any Bridgeport nodes that host your bridge, such as the GitHub Bridgeport Deployment app.
+A human-readable name for the bridge. This should not exceed 50 characters and should relate to the purpose and content of the Bridge. It will be shown on the homepage of any Bridgeport nodes that host your bridge.
 
 ## `description`
 
@@ -36,7 +36,7 @@ The reader should create an HTTP server that handles requests to the database.
 
 You will receive `MONGODB_READ_CREDS` and `MONGODB_DATABASE` to perform read-only operations from your database, and serve data to requesters.
 
-When `reader.runtime` is `nodejs14`, the reader directory must contain `package.json` with a `main` field pointing to a JavaScript file that creates an HTTP server. See the example bridge repositories for more guidence.
+When `reader.runtime` is `nodejs14`, the reader directory must contain `package.json` with a `main` field pointing to a JavaScript file that creates an HTTP server. See the example bridge repositories for more guidance.
 
 ## `reader.runtime`
 
@@ -50,15 +50,15 @@ Specify a path relative to the `bridgeport.json` file where the Bridge Reader is
 
 This is an object containing configuration related to the Bridge Transformer.
 
-The transformer contains an `index.js` fils with `exports.transformer`, which is a serverless function.
+The transformer contains an `index.js` file with `exports.transformer`, which is a serverless function.
 
-The function HTTP payload contains `action` and `payload`.
+The HTTP route handler will be provided with `req.body.action` and `req.body.payload`.
 
 You will receive `MONGODB_READWRITE_CREDS` and `MONGODB_DATABASE` to transform the Bitcoin transactions you receive into your database.
 
-When `action` is `process`, take `payload` and add it to your database.
+When `req.body.action` is `process`, take `req.body.payload`, transform it into your desired format and add it to your database.
 
-When `action` is `rollback`, take `payload` and remove it from your database.
+When `req.body.action` is `rollback`, remove the data associated with `req.body.payload` from your database.
 
 ## `transformer.directory`
 
@@ -76,8 +76,8 @@ Note that you may rarely receive transactions that don't follow your filter, if 
 
 ## `filter.startingBlockHeight`
 
-The block number when your protocol was created.
+The block number when your protocol was created. If you are creating a new on-chain protocol and do not care about older transactions, it is best to use the current block height.
 
 ## `filter.find`
 
-This is the Bitbus/Bitsocket "find" block.
+This is the Bitbus "`q.find`" block.

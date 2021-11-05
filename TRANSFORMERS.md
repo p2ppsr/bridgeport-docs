@@ -1,11 +1,6 @@
 # Bridge Transformers
 
-Redux for Bitcoin
-
-## Overview
-
-Since we (*currently*) rely on [Bitbus](https://bitbus.network), The Bridgeport Busdriver "drives" your Bridge Transformer by 
-transforming the global Bitcoin bus into your application-specific bus with your Bridge Filter.
+The Bridge Transformer is the heart of your bridge. It takes Bitcoin transactions in TXO format as an input, and uses them to power your bridge database.
 
 ## Pre-requisites
 
@@ -49,14 +44,10 @@ This returns a Promise. Always `await` Promises, even if you don't care about th
 
 ### `state.db` and `state.session`
 
-We pass `db` and `session` in the state object. If you leverage this, you MUST pass `session` into any of the database operations you run. This insures that they are associated with the MongoDB transactions that Busdriver started for your use.
+We pass `db` and `session` in the state object. If you leverage this, you MUST pass `session` into any of the database operations you run. This insures that they are associated with the MongoDB transactions that is associated with this current Bitcoin transaction.
 
 These operations return Promises. Always `await` Promises, even if you don't care about the results.
 
 ## Creating Live Events
 
 Live events are coming very soon to Bridgeport 2.0. Please bug Ty for this if it is causing you pain.
-
-## Implementation Notes
-
-We pass `db` and `session` in the state object. If you leverage this, you MUST pass `session` into any of the database operations you run. This insures that they are associated with the MongoDB transactions that is associated with this current Bitcoin transaction.

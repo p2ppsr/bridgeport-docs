@@ -10,7 +10,7 @@ Each Bridgeport Node hosts an identical API. The only difference is which Bridge
 
 ## API Documentation
 
-The Bridgeport Node itself exposes a simple API, with the following two endpoints:
+The Bridgeport Node itself exposes a simple API, with the following three endpoints:
 
 ### GET `/`
 
@@ -20,7 +20,17 @@ Web interface where you can see a list of bridges hosted by this Bridgeport node
 
 Returns an array of objects, each containing information about one of the bridges hosted by this Bridgeport node
 
-The object contains `name`, `description`, `id` and `version`.
+Each object contains `name`, `description`, `id` and `version`.
+
+### POST `/processTransaction`
+
+Allows you to tell the Bridgeport node about a new transaction that you think would be relevant to one or more bridges hosted on this node.
+
+The body of the request should be an Everett-style transaction envelope proving the transaction in the chain. It may be unconfirmed.
+
+An additional `bridges` field should be appended to the envelope, indicating which Bridge ID(s) this transaction is related to.
+
+After validating the transaction and processing it through the relevant Bridge Transformer(s), the Bridgeport node will use BHRP to look up other nodes that host the same bridge(s), and gossip the new transaction across the network to each of them. This keeps all nodes in sync about new transactions.
 
 ## Default Reader API
 
