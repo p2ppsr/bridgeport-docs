@@ -44,13 +44,16 @@ Install Bridgeport App
 If you have installed this Bridgeport Deployment App, then click "Next". Otherwise, click the "INSTALL STAGING APP"/"INSTALL PRODUCTION APP" button and follow the Github instructions.
 
 Set the Bridge ID
-If you already have a Bridge ID, then enter it as Your Bridge ID. Otherwise, click the "GENERATE A BRIDGE ID..." button, a popup will advise you the key file will be downloaded to your computer, it should be kept in a safe place. Click the GENERATE NOW link and afterwards, follow the instructions for updating `bridgeport.json` to authenticate ownership over the Bridge repo. On your Github repo push the changes to your master branch.
+If you already have a Bridge ID, then enter it as Your Bridge ID. Otherwise, click the "GENERATE A BRIDGE ID..." button, a popup will advise you the key file will be downloaded to your computer, it should be kept in a safe place. Click the "GENERATE NOW" link.
 
+Authorize Bridge Hosting
+You give permission for Babbage to host your Bridge by clicking the "SIGN AUTHORIZATION" link.
 
-, and view your new deployment from the Deployments page.
+Deploy Your New Bridge
+Your JSON is displayed for authenticating your ownership over the Bridge repo. Follow the instructions below for updating the `bridgeport.json` file. On your Github repo push the changes to your master branch. When complete, click the "VIEW DEPLOYMENTS" link.
 
 Funding
-Deposit some money into Bridgeport Dashboard to pay for the hosting of your bridges, then you will be ready to start working! Whenever you push to your master branch, your bridge will be updated live onto our Bridgeport node.
+Click the "Account" link and depsit some money into Bridgeport Dashboard to pay for the hosting of your bridges, then you will be ready to start working! Whenever you push to your master branch, your bridge will be updated live onto our Bridgeport node.
 
 You can view your logs, change settings and add environment variables to bridges in the Bridgeport Dashboard.
 
