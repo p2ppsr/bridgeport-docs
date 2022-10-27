@@ -53,7 +53,7 @@ Deploy Your New Bridge
 Your JSON is displayed for authenticating your ownership over the Bridge repo. Follow the instructions below for updating the `bridgeport.json` file. On your Github repo push the changes to your master branch. When complete, click the "VIEW DEPLOYMENTS" link.
 
 Funding
-Click the "Account" link and depsit some money into Bridgeport Dashboard to pay for the hosting of your bridges, then you will be ready to start working! Whenever you push to your master branch, your bridge will be updated live onto our Bridgeport node.
+Click the "Account" link and deposit some money into Bridgeport Dashboard to pay for the hosting of your bridges, then you will be ready to start working! Whenever you push to your master branch, your bridge will be updated live onto our Bridgeport node.
 
 You can view your logs, change settings and add environment variables to bridges in the Bridgeport Dashboard.
 
